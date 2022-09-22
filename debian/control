@@ -1,0 +1,51 @@
+Source: golang-gopkg-jcmturner-gokrb5.v5
+Maintainer: Debian Go Packaging Team <team+pkg-go@tracker.debian.org>
+Uploaders: Stephen Gelman <ssgelm@debian.org>
+Section: devel
+Testsuite: autopkgtest-pkg-go
+Priority: optional
+Build-Depends: debhelper-compat (= 12),
+               dh-golang
+Build-Depends-Indep: golang-any,
+                     golang-github-hashicorp-go-uuid-dev,
+                     golang-github-stretchr-testify-dev,
+                     golang-golang-x-crypto-dev,
+                     golang-github-jcmturner-gofork-dev,
+                     golang-gopkg-jcmturner-dnsutils.v1-dev,
+                     golang-gopkg-jcmturner-rpc.v0-dev,
+                     golang-gopkg-jcmturner-aescts.v1-dev,
+                     golang-gopkg-jcmturner-goidentity.v2-dev,
+Standards-Version: 4.5.0
+Vcs-Browser: https://salsa.debian.org/go-team/packages/golang-gopkg-jcmturner-gokrb5.v5
+Vcs-Git: https://salsa.debian.org/go-team/packages/golang-gopkg-jcmturner-gokrb5.v5.git
+Homepage: https://github.com/jcmturner/gokrb5
+Rules-Requires-Root: no
+XS-Go-Import-Path: gopkg.in/jcmturner/gokrb5.v5
+
+Package: golang-gopkg-jcmturner-gokrb5.v5-dev
+Architecture: all
+Depends: golang-github-hashicorp-go-uuid-dev,
+         golang-github-stretchr-testify-dev,
+         golang-golang-x-crypto-dev,
+         golang-github-jcmturner-gofork-dev,
+         golang-gopkg-jcmturner-dnsutils.v1-dev,
+         golang-gopkg-jcmturner-rpc.v0-dev,
+         golang-gopkg-jcmturner-aescts.v1-dev,
+         golang-gopkg-jcmturner-goidentity.v2-dev,
+         ${misc:Depends}
+Description: Pure Go Kerberos library for clients and services
+ Features
+  - Pure Go - no dependency on external libraries
+  - No platform specific code
+  - Server Side
+  - HTTP handler wrapper implements SPNEGO Kerberos authentication
+  - HTTP handler wrapper decodes Microsoft AD PAC authorization data
+  - Client Side
+  - Client that can authenticate to an SPNEGO Kerberos authenticated web service
+  - Ability to change client's password
+  - General
+  - Kerberos libraries for custom integration
+  - Parsing Keytab files
+  - Parsing krb5.conf files
+  - Parsing client credentials cache files such as
+    /tmp/krb5cc_$(id -u $(whoami))
